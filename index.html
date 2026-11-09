@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+<html lang="tr" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>İstanbul 7/24 Mobil Yol Yardım & Premium Auto Servis</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              gold: '#D4AF37',
+              goldHover: '#B89628',
+              dark: '#0B0F17',
+              card: '#121824',
+              border: '#1E293B'
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body { background-color: #0B0F17; }
+    .gold-gradient-text {
+      background: linear-gradient(135deg, #FFF0B2 0%, #D4AF37 50%, #9A7B1C 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .hero-bg {
+      background: linear-gradient(to bottom, rgba(11, 15, 23, 0.75), rgba(11, 15, 23, 0.98)), url('hero-bg.jpg');
+      background-size: cover;
+      background-position: center;
+    }
+    .star-rating i {
+      cursor: pointer;
+      transition: transform 0.15s ease, color 0.15s ease;
+    }
+    .star-rating i:hover {
+      transform: scale(1.25);
+    }
+  </style>
+</head>
+<body id="top" class="text-slate-100 font-sans antialiased pb-24 md:pb-0 transition-colors duration-300">
+
+  <!-- Top Bar -->
+  <div class="bg-[#070A0F] border-b border-brand-border text-xs py-2.5 px-4 hidden md:block">
+    <div class="max-w-6xl mx-auto flex justify-between items-center text-slate-400">
+      <div class="flex items-center gap-6">
+        <span><i class="fa-solid fa-clock text-amber-400 mr-1.5"></i> 7/24 Nöbetçi Mobil Servis</span>
+        <span><i class="fa-solid fa-location-dot text-amber-400 mr-1.5"></i> Ümraniye / İstanbul Merkezli</span>
+        <span><i class="fa-solid fa-shield-halved text-amber-400 mr-1.5"></i> Araçta POS ile Ödeme</span>
+      </div>
+      <div>
+        <a href="tel:05325097158" class="text-amber-400 font-bold hover:text-white transition"><i class="fa-solid fa-phone mr-1.5"></i> 0532 509 71 58</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="bg-brand-dark/90 backdrop-blur-md border-b border-brand-border sticky top-0 z-40">
+    <div class="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
+      <a href="#top" class="flex items-center gap-3">
+        <div class="w-10 h-10 bg-gradient-to-tr from-[#9A7B1C] via-[#D4AF37] to-[#FFF0B2] text-slate-950 rounded-xl flex items-center justify-center font-black text-xl shadow-lg shadow-amber-500/10">
+          <i class="fa-solid fa-truck-monster"></i>
+        </div>
+        <div>
+          <div class="text-lg font-black tracking-wider gold-gradient-text leading-none">İSTANBUL</div>
+          <div class="text-[10px] font-bold text-slate-400 tracking-widest mt-0.5">PREMIUM YOL YARDIM</div>
+        </div>
+      </a>
+
+      <!-- TEK SAYFA KAYDIRMALI MENÜ -->
+      <nav class="hidden lg:flex items-center gap-8 text-sm font-semibold text-slate-300">
+        <a href="#top" class="hover:text-amber-400 transition pb-1">Ana Sayfa</a>
+        <a href="#hizmetlerimiz" class="hover:text-amber-400 transition pb-1">Hizmetlerimiz</a>
+        <a href="#sss" class="hover:text-amber-400 transition pb-1">S.S.S.</a>
+        <a href="#yorumlar" class="hover:text-amber-400 transition pb-1">Yorumlar & Puanlama</a>
+        <a href="#iletisim-konum" class="hover:text-amber-400 transition pb-1">İletişim & Konum</a>
+      </nav>
+
+      <a href="tel:05325097158" class="bg-gradient-to-r from-amber-400 to-amber-500 hover:from-amber-500 hover:to-amber-600 text-slate-950 font-extrabold px-5 py-2.5 rounded-xl transition-all duration-300 transform hover:scale-105 flex items-center gap-2 text-sm shadow-lg shadow-amber-500/20">
+        <i class="fa-solid fa-phone animate-pulse"></i> 0532 509 71 58
+      </a>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero-bg py-20 md:py-28 border-b border-brand-border text-center relative">
+    <div class="max-w-4xl mx-auto px-4">
+      <div class="inline-flex items-center gap-2 bg-brand-card/90 border border-brand-border text-amber-400 text-xs md:text-sm font-semibold px-4 py-2 rounded-full mb-6 backdrop-blur">
+        <span class="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-ping"></span>
+        Ümraniye Kafiye Sokak Merkezli Araçlarımız Görevde
+      </div>
+      
+      <h1 class="text-3xl md:text-6xl font-black mb-6 leading-tight tracking-tight">
+        Yolda Mı Kaldınız? <br>
+        <span class="gold-gradient-text">7/24 Mobil Lastik & Oto Yardım</span>
+      </h1>
+      
+      <p class="text-slate-200 text-base md:text-xl max-w-2xl mx-auto mb-10 leading-relaxed font-light drop-shadow">
+        Yerinde profesyonel lastik değişimi, oto kurtarıcı, akü takviyesi ve mobil hızlı bakım. Konum atın, ekibimiz 30 dakikada yanınızda olsun.
+      </p>
+
+      <div class="flex flex-col gap-4 max-w-lg mx-auto mb-8">
+        <a href="tel:05325097158" class="w-full bg-gradient-to-r from-amber-400 to-amber-500 hover:from-amber-500 hover:to-amber-600 text-slate-950 text-xl md:text-2xl font-black py-5 px-8 rounded-2xl shadow-2xl shadow-amber-500/30 transition transform hover:-translate-y-1 flex items-center justify-center gap-4 border-2 border-amber-300">
+          <i class="fa-solid fa-phone-volume text-2xl md:text-3xl animate-bounce"></i> HEMEN ARA (7/24)
+        </a>
+        <a href="https://wa.me/905325097158?text=Merhaba,%20Ümraniye%20konumum%20için%20acil%20mobil%20ekip%20istiyorum." target="_blank" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white text-xl md:text-2xl font-black py-5 px-8 rounded-2xl shadow-2xl shadow-emerald-600/30 transition transform hover:-translate-y-1 flex items-center justify-center gap-4 border-2 border-emerald-400">
+          <i class="fa-brands fa-whatsapp text-3xl md:text-4xl"></i> WHATSAPP KONUM AT
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Hizmetlerimiz -->
+  <section id="hizmetlerimiz" class="max-w-6xl mx-auto px-4 py-20 border-b border-brand-border">
+    <div class="text-center mb-14">
+      <span class="text-amber-400 text-xs font-bold tracking-widest uppercase mb-2 block">HİZMETLERİMİZ</span>
+      <h2 class="text-2xl md:text-5xl font-black mb-3 gold-gradient-text">Tüm Lastik İhtiyaçlarınızda Profesyonel Çözümler</h2>
+      <p class="text-slate-400">Yolda veya yerinde, lastik ile ilgili her konuda yanınızdayız.</p>
+    </div>
+    
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+      
+      <!-- Hizmet 1 -->
+      <div class="bg-brand-card border border-brand-border rounded-2xl overflow-hidden hover:border-amber-500/50 transition-all duration-300 flex flex-col justify-between group">
+        <div class="overflow-hidden h-52 relative">
+          <img src="https://images.unsplash.com/photo-1578844251758-2f71da64c96f?auto=format&fit=crop&q=80&w=600" alt="Lastik Tamiri & Stepne Takma" class="w-full h-full object-cover group-hover:scale-105 transition-all duration-500">
+          <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent"></div>
+        </div>
+        <div class="p-6 flex-1 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center gap-3 mb-3">
+              <div class="w-10 h-10 bg-amber-500/20 text-amber-400 rounded-xl flex items-center justify-center text-lg"><i class="fa-solid fa-wrench"></i></div>
+              <h3 class="text-xl font-bold text-white">Lastik Tamiri & Stepne Takma</h3>
+            </div>
+            <p class="text-slate-400 text-sm mb-6 leading-relaxed">Yolda lastiğiniz patladıysa, yerinde hızlı yama ve güvenilir stepne değişim çözümleri sunuyoruz.</p>
+          </div>
+          <a href="https://wa.me/905325097158?text=Merhaba,%20Lastik%20Tamiri%20ve%20Stepne%20Takma%20hizmeti%20için%20ekip%20istiyorum." target="_blank" class="w-full bg-amber-500 hover:bg-amber-600 text-slate-950 font-extrabold py-3 rounded-xl transition text-center flex items-center justify-center gap-2">
+            Servis Çağır <i class="fa-solid fa-chevron-right text-xs"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- Hizmet 2 -->
+      <div class="bg-brand-card border border-brand-border rounded-2xl overflow-hidden hover:border-amber-500/50 transition-all duration-300 flex flex-col justify-between group">
+        <div class="overflow-hidden h-52 relative">
+          <img src="http://tyremates.co.uk/wp-content/uploads/2024/07/CHOOSE.webp" alt="Yerinde Yeni Lastik Değişimi" class="w-full h-full object-cover group-hover:scale-105 transition-all duration-500">
+          <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent"></div>
+        </div>
+        <div class="p-6 flex-1 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center gap-3 mb-3">
+              <div class="w-10 h-10 bg-amber-500/20 text-amber-400 rounded-xl flex items-center justify-center text-lg"><i class="fa-solid fa-compact-disc"></i></div>
+              <h3 class="text-xl font-bold text-white">Yerinde Yeni Lastik Değişimi</h3>
+            </div>
+            <p class="text-slate-400 text-sm mb-6 leading-relaxed">İstediğiniz marka ve model sıfır lastikleri, bulunduğunuz adrese getirip yerinde monte ediyoruz.</p>
+          </div>
+          <a href="https://wa.me/905325097158?text=Merhaba,%20Yerinde%20Yeni%20Lastik%20Değişimi%20için%20fiyat%20teklifi%20almak%20istiyorum." target="_blank" class="w-full bg-amber-500 hover:bg-amber-600 text-slate-950 font-extrabold py-3 rounded-xl transition text-center flex items-center justify-center gap-2">
+            Servis Çağır <i class="fa-solid fa-chevron-right text-xs"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- Hizmet 3 -->
+      <div class="bg-brand-card border border-brand-border rounded-2xl overflow-hidden hover:border-amber-500/50 transition-all duration-300 flex flex-col justify-between group">
+        <div class="overflow-hidden h-52 relative">
+          <img src="https://images.unsplash.com/photo-1580273916550-e323be2ae537?auto=format&fit=crop&q=80&w=600" alt="Yerinde Balans İşlemi" class="w-full h-full object-cover group-hover:scale-105 transition-all duration-500">
+          <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent"></div>
+        </div>
+        <div class="p-6 flex-1 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center gap-3 mb-3">
+              <div class="w-10 h-10 bg-amber-500/20 text-amber-400 rounded-xl flex items-center justify-center text-lg"><i class="fa-solid fa-scale-balanced"></i></div>
+              <h3 class="text-xl font-bold text-white">Yerinde Balans İşlemi</h3>
+            </div>
+            <p class="text-slate-400 text-sm mb-6 leading-relaxed">Sürüş konforunuz ve yol güvenliğiniz için hassas bilgisayarlı balans ayarını yerinde yapıyoruz.</p>
+          </div>
+          <a href="https://wa.me/905325097158?text=Merhaba,%20Yerinde%20Balans%20İşlemi%20hizmetiniz%20hakkında%20bilgi%20almak%20istiyorum." target="_blank" class="w-full bg-amber-500 hover:bg-amber-600 text-slate-950 font-extrabold py-3 rounded-xl transition text-center flex items-center justify-center gap-2">
+            Servis Çağır <i class="fa-solid fa-chevron-right text-xs"></i>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- S.S.S. BÖLÜMÜ -->
+  <section id="sss" class="max-w-4xl mx-auto px-4 py-20 border-b border-brand-border">
+    <div class="text-center mb-14">
+      <span class="text-amber-400 text-xs font-bold tracking-widest uppercase mb-2 block">AKLINIZA TAKILANLAR</span>
+      <h2 class="text-2xl md:text-5xl font-black mb-3 gold-gradient-text">Sıkça Sorulan Sorular</h2>
+      <p class="text-slate-400">Yol yardım hizmetlerimiz hakkında en sık sorulan soruların cevapları.</p>
+    </div>
+
+    <div class="space-y-4">
+      <div class="bg-brand-card border border-brand-border p-6 rounded-2xl">
+        <h3 class="text-lg font-bold text-white mb-2 flex items-center gap-3">
+          <i class="fa-solid fa-circle-question text-amber-400"></i> Gece saatlerinde mobil lastik hizmetiniz var mı?
+        </h3>
+        <p class="text-slate-400 text-sm leading-relaxed pl-7">
+          Evet, 7 gün 24 saat kesintisiz nöbetçi gezici mobil araçlarımızla hizmet vermekteyiz. Gece veya gündüz saat fark etmeksizin bize ulaşabilirsiniz.
+        </p>
+      </div>
+
+      <div class="bg-brand-card border border-brand-border p-6 rounded-2xl">
+        <h3 class="text-lg font-bold text-white mb-2 flex items-center gap-3">
+          <i class="fa-solid fa-circle-question text-amber-400"></i> Bulunduğum konuma ne kadar sürede ulaşıyorsunuz?
+        </h3>
+        <p class="text-slate-400 text-sm leading-relaxed pl-7">
+          Ümraniye Kafiye Sokak merkezli mobil araçlarımız trafik durumuna bağlı olarak İstanbul genelindeki konumunuza ortalama 20 ile 35 dakika içerisinde ulaşmaktadır.
+        </p>
+      </div>
+
+      <div class="bg-brand-card border border-brand-border p-6 rounded-2xl">
+        <h3 class="text-lg font-bold text-white mb-2 flex items-center gap-3">
+          <i class="fa-solid fa-circle-question text-amber-400"></i> Araçta Kredi Kartı (POS cihazı) ile ödeme yapabilir miyim?
+        </h3>
+        <p class="text-slate-400 text-sm leading-relaxed pl-7">
+          Evet, tüm mobil ekiplerimizin araçlarında seyyar POS cihazı mevcuttur. Nakit, Kredi Kartı veya Havale/EFT ile kapıda kolayca ödeme yapabilirsiniz.
+        </p>
+      </div>
+
+      <div class="bg-brand-card border border-brand-border p-6 rounded-2xl">
+        <h3 class="text-lg font-bold text-white mb-2 flex items-center gap-3">
+          <i class="fa-solid fa-circle-question text-amber-400"></i> Otoyol ve köprü bağlantılarında servisiniz geçerli mi?
+        </h3>
+        <p class="text-slate-400 text-sm leading-relaxed pl-7">
+          Evet, TEM, E-5 ve Kuzey Marmara otoyol hatları dahil olmak üzere İstanbul'un tüm ana ve ara arterlerinde emniyetli mobil lastik tamiri sağlamaktayız.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Yorumlar & Değerlendirme Bölümü -->
+  <section id="yorumlar" class="max-w-6xl mx-auto px-4 py-20 border-b border-brand-border">
+    <div class="text-center mb-14">
+      <h2 class="text-2xl md:text-4xl font-bold mb-3 gold-gradient-text">Müşteri Yorumları & Değerlendirmeler</h2>
+      <p class="text-slate-400">Yalnızca Yönetici Tarafından Onaylanmış Hizmetlerin Puanı Ortalama Puanı Etkiler</p>
+    </div>
+
+    <!-- PUAN BANNER'I -->
+    <div class="bg-brand-card border border-brand-border p-8 rounded-2xl mb-12 flex flex-col md:flex-row items-center justify-between gap-6">
+      <div class="flex items-center gap-6">
+        <div class="text-5xl font-black text-amber-400"><span id="avgScoreDisplay">5.0</span><span class="text-2xl text-slate-500">/5</span></div>
+        <div>
+          <div class="flex text-amber-400 text-lg mb-1" id="avgStarsContainer">
+            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+          </div>
+          <div class="text-slate-300 text-sm font-semibold">Toplam <span id="totalReviewCount">3</span> Onaylı Hizmet Değerlendirmesi</div>
+          <div class="text-slate-500 text-xs">Sadece "Doğrulanmış Hizmet" statüsündeki yorumlar hesaba katılır.</div>
+        </div>
+      </div>
+      <a href="#degerlendirme-formu" class="bg-slate-800 hover:bg-slate-700 text-amber-400 font-bold px-6 py-3 rounded-xl border border-amber-500/30 transition text-sm">
+        <i class="fa-solid fa-pen mr-2"></i> Yorum Yaz & Değerlendir
+      </a>
+    </div>
+
+    <!-- Yorum Kartları Akışı -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16" id="yorumlar-listesi">
+      
+      <!-- Örnek Onaylı Yorum 1 -->
+      <div class="bg-brand-card border border-brand-border p-6 rounded-2xl comment-card" id="comment-1" data-rating="5" data-approved="true">
+        <div class="flex justify-between items-center mb-4">
+          <div class="flex text-amber-400 text-xs">
+            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+          </div>
+          <span class="text-[10px] text-slate-500">2 gün önce</span>
+        </div>
+        <p class="text-slate-300 text-sm mb-4 leading-relaxed">"Gece 03:00'te Ümraniye Kafiye Sokak tarafında lastiğim patladı. WhatsApp'tan konum attım, usta 20 dakikada geldi."</p>
+        <div class="flex items-center justify-between">
+          <div class="flex items-center gap-2">
+            <div class="w-8 h-8 rounded-full bg-amber-500/20 text-amber-400 flex items-center justify-center font-bold text-xs">MK</div>
+            <div>
+              <div class="font-bold text-xs text-slate-200">Murat K.</div>
+              <div class="status-badge text-[10px] text-emerald-400 font-medium"><i class="fa-solid fa-circle-check mr-1"></i> Doğrulanmış Hizmet</div>
+            </div>
+          </div>
+          <div class="admin-controls flex gap-1">
+            <button onclick="toggleApproveComment('comment-1')" title="Onay Durumunu Değiştir" class="bg-emerald-500/20 hover:bg-emerald-500 text-emerald-400 hover:text-white text-[10px] px-2 py-1 rounded transition"><i class="fa-solid fa-check"></i></button>
+            <button onclick="deleteComment('comment-1')" title="Sil" class="bg-rose-500/20 hover:bg-rose-500 text-rose-400 hover:text-white text-[10px] px-2 py-1 rounded transition"><i class="fa-solid fa-trash"></i></button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Örnek Onaylı Yorum 2 -->
+      <div class="bg-brand-card border border-brand-border p-6 rounded-2xl comment-card" id="comment-2" data-rating="5" data-approved="true">
+        <div class="flex justify-between items-center mb-4">
+          <div class="flex text-amber-400 text-xs">
+            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+          </div>
+          <span class="text-[10px] text-slate-500">1 hafta önce</span>
+        </div>
+        <p class="text-slate-300 text-sm mb-4 leading-relaxed">"Otoyolda aküm bitti. Mobil araçlarında seyyar POS cihazı olması harika bir olay, hemen hallettik."</p>
+        <div class="flex items-center justify-between">
+          <div class="flex items-center gap-2">
+            <div class="w-8 h-8 rounded-full bg-amber-500/20 text-amber-400 flex items-center justify-center font-bold text-xs">SY</div>
+            <div>
+              <div class="font-bold text-xs text-slate-200">Selin Y.</div>
+              <div class="status-badge text-[10px] text-emerald-400 font-medium"><i class="fa-solid fa-circle-check mr-1"></i> Doğrulanmış Hizmet</div>
+            </div>
+          </div>
+          <div class="admin-controls flex gap-1">
+            <button onclick="toggleApproveComment('comment-2')" title="Onay Durumunu Değiştir" class="bg-emerald-500/20 hover:bg-emerald-500 text-emerald-400 hover:text-white text-[10px] px-2 py-1 rounded transition"><i class="fa-solid fa-check"></i></button>
+            <button onclick="deleteComment('comment-2')" title="Sil" class="bg-rose-500/20 hover:bg-rose-500 text-rose-400 hover:text-white text-[10px] px-2 py-1 rounded transition"><i class="fa-solid fa-trash"></i></button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Örnek Onaylı Yorum 3 -->
+      <div class="bg-brand-card border border-brand-border p-6 rounded-2xl comment-card" id="comment-3" data-rating="5" data-approved="true">
+        <div class="flex justify-between items-center mb-4">
+          <div class="flex text-amber-400 text-xs">
+            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+          </div>
+          <span class="text-[10px] text-slate-500">2 hafta önce</span>
+        </div>
+        <p class="text-slate-300 text-sm mb-4 leading-relaxed">"Stepne değişimi için aradım. Çok dürüst esnaflar. Fiyat baştan ne konuşulduysa o alındı."</p>
+        <div class="flex items-center justify-between">
+          <div class="flex items-center gap-2">
+            <div class="w-8 h-8 rounded-full bg-amber-500/20 text-amber-400 flex items-center justify-center font-bold text-xs">AT</div>
+            <div>
+              <div class="font-bold text-xs text-slate-200">Ahmet T.</div>
+              <div class="status-badge text-[10px] text-emerald-400 font-medium"><i class="fa-solid fa-circle-check mr-1"></i> Doğrulanmış Hizmet</div>
+            </div>
+          </div>
+          <div class="admin-controls flex gap-1">
+            <button onclick="toggleApproveComment('comment-3')" title="Onay Durumunu Değiştir" class="bg-emerald-500/20 hover:bg-emerald-500 text-emerald-400 hover:text-white text-[10px] px-2 py-1 rounded transition"><i class="fa-solid fa-check"></i></button>
+            <button onclick="deleteComment('comment-3')" title="Sil" class="bg-rose-500/20 hover:bg-rose-500 text-rose-400 hover:text-white text-[10px] px-2 py-1 rounded transition"><i class="fa-solid fa-trash"></i></button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Yorum Gönderme Formu -->
+    <div id="degerlendirme-formu" class="bg-brand-card border border-brand-border p-8 rounded-2xl max-w-2xl mx-auto shadow-2xl">
+      <h3 class="text-xl font-bold text-white mb-1 text-center">Deneyiminizi Paylaşın</h3>
+      <p class="text-slate-400 text-xs text-center mb-6">Yorumunuz yönetici onayından geçtikten sonra genel puan ortalamasına eklenecektir.</p>
+      
+      <form id="commentForm" onsubmit="handleCommentSubmit(event)" class="space-y-5">
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div>
+            <label class="block text-xs font-semibold text-slate-400 mb-1">Adınız Soyadınız</label>
+            <input type="text" id="authorName" required placeholder="Örn: Ahmet Y." class="w-full bg-slate-900 border border-brand-border rounded-xl p-3 text-sm text-white focus:outline-none focus:border-amber-400 transition">
+          </div>
+          <div>
+            <label class="block text-xs font-semibold text-slate-400 mb-1">Aldığınız Hizmet</label>
+            <select id="serviceType" class="w-full bg-slate-900 border border-brand-border rounded-xl p-3 text-sm text-white focus:outline-none focus:border-amber-400 transition">
+              <option>Yerinde Lastik Tamiri</option>
+              <option>Yerinde Yeni Lastik Değişimi</option>
+              <option>Yerinde Balans İşlemi</option>
+              <option>Mevsimlik Lastik Değişimi</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Yıldız Seçim Alanı -->
+        <div class="text-center bg-slate-900/60 p-4 rounded-xl border border-brand-border">
+          <label class="block text-xs font-semibold text-slate-400 mb-2">Hizmet Puanınız</label>
+          <div class="star-rating text-2xl text-slate-600 flex justify-center gap-2" id="starContainer">
+            <i class="fa-solid fa-star" data-value="1" onmouseover="highlightStars(1)" onmouseleave="resetStars()" onclick="selectRating(1)"></i>
+            <i class="fa-solid fa-star" data-value="2" onmouseover="highlightStars(2)" onmouseleave="resetStars()" onclick="selectRating(2)"></i>
+            <i class="fa-solid fa-star" data-value="3" onmouseover="highlightStars(3)" onmouseleave="resetStars()" onclick="selectRating(3)"></i>
+            <i class="fa-solid fa-star" data-value="4" onmouseover="highlightStars(4)" onmouseleave="resetStars()" onclick="selectRating(4)"></i>
+            <i class="fa-solid fa-star" data-value="5" onmouseover="highlightStars(5)" onmouseleave="resetStars()" onclick="selectRating(5)"></i>
+          </div>
+          <span id="ratingText" class="text-xs text-amber-400 font-bold mt-2 block">Puan Seçin (5 Üzerinden)</span>
+        </div>
+
+        <div>
+          <label class="block text-xs font-semibold text-slate-400 mb-1">Yorumunuz</label>
+          <textarea id="commentText" required rows="3" placeholder="Ustanın hızı, işçilik kalitesi ve genel memnuniyetiniz..." class="w-full bg-slate-900 border border-brand-border rounded-xl p-3 text-sm text-white focus:outline-none focus:border-amber-400 transition"></textarea>
+        </div>
+
+        <button type="submit" class="w-full bg-gradient-to-r from-amber-400 to-amber-500 hover:from-amber-500 hover:to-amber-600 text-slate-950 font-bold py-3.5 rounded-xl transition shadow-lg shadow-amber-500/10 flex items-center justify-center gap-2">
+          <i class="fa-solid fa-paper-plane"></i> Değerlendirmeyi Gönder
+        </button>
+      </form>
+
+      <div id="successMsg" class="hidden text-amber-400 text-xs text-center mt-4 font-semibold p-3 bg-amber-500/10 border border-amber-500/30 rounded-xl">
+        <i class="fa-solid fa-clock mr-1"></i> Yorumunuz alındı! Yönetici tarafından onaylandıktan sonra ortalama puana eklenecektir.
+      </div>
+    </div>
+  </section>
+
+  <!-- İLETİŞİM & KONUM BÖLÜMÜ (TEK SAYFAYA TAŞINDI) -->
+  <section id="iletisim-konum" class="max-w-6xl mx-auto px-4 py-20">
+    <div class="text-center mb-14">
+      <span class="text-amber-400 text-xs font-bold tracking-widest uppercase mb-2 block">İLETİŞİM & KONUM</span>
+      <h2 class="text-2xl md:text-5xl font-black mb-3 gold-gradient-text">Bize Ulaşın & Konum Bilgilerimiz</h2>
+      <p class="text-slate-400">Kafiye Sokak, Ümraniye Merkezli Mobil Filomuz ile 7/24 Hizmetinizdeyiz</p>
+    </div>
+    
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16">
+      
+      <!-- Detaylar -->
+      <div class="bg-brand-card border border-brand-border p-8 rounded-2xl space-y-8">
+        <div class="flex items-start gap-4">
+          <div class="w-12 h-12 bg-amber-500/10 text-amber-400 rounded-xl flex items-center justify-center text-xl shrink-0">
+            <i class="fa-solid fa-map-pin"></i>
+          </div>
+          <div>
+            <div class="text-amber-400 font-bold text-xs uppercase tracking-wider mb-1">Açık Adresimiz</div>
+            <div class="text-slate-200 text-base font-semibold leading-relaxed">
+              Kafiye Sokak, Ümraniye / İstanbul
+            </div>
+            <p class="text-slate-400 text-xs mt-1">Ümraniye ve çevre tüm ilçelere ortalama 20-30 dakika varış süremiz mevcuttur.</p>
+          </div>
+        </div>
+
+        <div class="flex items-start gap-4">
+          <div class="w-12 h-12 bg-amber-500/10 text-amber-400 rounded-xl flex items-center justify-center text-xl shrink-0">
+            <i class="fa-solid fa-phone"></i>
+          </div>
+          <div>
+            <div class="text-amber-400 font-bold text-xs uppercase tracking-wider mb-1">7/24 Acil İletişim Hattı</div>
+            <a href="tel:05325097158" class="text-xl font-black text-white hover:text-amber-400 transition">0532 509 71 58</a>
+          </div>
+        </div>
+
+        <div class="flex items-start gap-4">
+          <div class="w-12 h-12 bg-emerald-500/10 text-emerald-400 rounded-xl flex items-center justify-center text-xl shrink-0">
+            <i class="fa-brands fa-whatsapp"></i>
+          </div>
+          <div>
+            <div class="text-emerald-400 font-bold text-xs uppercase tracking-wider mb-1">WhatsApp Canlı Konum Hattı</div>
+            <a href="https://wa.me/905325097158?text=Merhaba,%20Kafiye%20Sokak/Ümraniye%20konumuma%20ekip%20istiyorum." target="_blank" class="text-xl font-black text-white hover:text-emerald-400 transition">+90 532 509 71 58</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Harita -->
+      <div class="bg-brand-card border border-brand-border rounded-2xl overflow-hidden min-h-[350px]">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3010.518881267675!2d29.0965!3d41.0234!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14cac8fa60c6cb3d%3A0x8e8b2b64d1f28ff1!2sKafiye%20Sk.%2C%20%C3%9Cmraniye%2F%C4%B0stanbul!5e0!3m2!1str!2str!4v1700000000000!5m2!1str!2str" class="w-full h-full border-0 min-h-[350px]" allowfullscreen="" loading="lazy"></iframe>
+      </div>
+
+    </div>
+
+    <!-- Bize Ulaşın Formu -->
+    <div class="bg-brand-card border border-brand-border p-8 md:p-10 rounded-2xl max-w-4xl mx-auto shadow-2xl">
+      <div class="text-center mb-8">
+        <h3 class="text-2xl md:text-3xl font-black gold-gradient-text mb-2">Bize Mesaj Gönderin</h3>
+        <p class="text-slate-400 text-sm">Talep veya sorularınız için formu doldurun, ekibimiz anında telefonla dönüş yapsın.</p>
+      </div>
+
+      <form id="contactForm" onsubmit="handleContactSubmit(event)" class="space-y-6">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div>
+            <label class="block text-xs font-semibold text-slate-400 mb-2">Adınız Soyadınız</label>
+            <input type="text" id="contactName" required placeholder="Örn: Mehmet Yılmaz" class="w-full bg-slate-900 border border-brand-border rounded-xl p-3.5 text-sm text-white focus:outline-none focus:border-amber-400 transition">
+          </div>
+          <div>
+            <label class="block text-xs font-semibold text-slate-400 mb-2">Telefon Numaranız</label>
+            <input type="tel" id="contactPhone" required placeholder="05XX XXX XX XX" class="w-full bg-slate-900 border border-brand-border rounded-xl p-3.5 text-sm text-white focus:outline-none focus:border-amber-400 transition">
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div>
+            <label class="block text-xs font-semibold text-slate-400 mb-2">İhtiyacınız Olan Hizmet</label>
+            <select id="contactService" class="w-full bg-slate-900 border border-brand-border rounded-xl p-3.5 text-sm text-white focus:outline-none focus:border-amber-400 transition">
+              <option>Lastik Tamiri & Stepne Değişimi</option>
+              <option>Yerinde Sıfır Lastik Değişimi</option>
+              <option>Yerinde Balans İşlemi</option>
+              <option>Mevsimlik Lastik Değişimi</option>
+              <option>Lastik Oteli & Depolama</option>
+              <option>Genel Bilgi / Diğer</option>
+            </select>
+          </div>
+          <div>
+            <label class="block text-xs font-semibold text-slate-400 mb-2">Bulunduğunuz İlçe / Konum</label>
+            <input type="text" id="contactLocation" placeholder="Örn: Ümraniye, Kadıköy E-5 vb." class="w-full bg-slate-900 border border-brand-border rounded-xl p-3.5 text-sm text-white focus:outline-none focus:border-amber-400 transition">
+          </div>
+        </div>
+
+        <div>
+          <label class="block text-xs font-semibold text-slate-400 mb-2">Mesajınız Veya Notunuz</label>
+          <textarea id="contactMessage" rows="4" placeholder="Talep ettiğiniz işlem veya araç durumu hakkında kısa bilgi..." class="w-full bg-slate-900 border border-brand-border rounded-xl p-3.5 text-sm text-white focus:outline-none focus:border-amber-400 transition"></textarea>
+        </div>
+
+        <button type="submit" class="w-full bg-gradient-to-r from-amber-400 to-amber-500 hover:from-amber-500 hover:to-amber-600 text-slate-950 text-base font-black py-4 rounded-xl transition shadow-lg shadow-amber-500/20 flex items-center justify-center gap-2">
+          <i class="fa-solid fa-paper-plane"></i> Talebi Gönder
+        </button>
+      </form>
+
+      <div id="formSuccess" class="hidden text-emerald-400 text-sm text-center mt-6 font-semibold p-4 bg-emerald-500/10 border border-emerald-500/30 rounded-xl">
+        <i class="fa-solid fa-circle-check mr-2"></i> Talebiniz başarıyla alındı! Mobil ekibimiz belirttiğiniz telefon numarasından sizi hemen arayacaktır.
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-[#070A0F] text-slate-500 text-xs py-12 border-t border-brand-border">
+    <div class="max-w-6xl mx-auto px-4 grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+      <div>
+        <div class="text-base font-bold text-white mb-3">İstanbul Auto Yol Yardım</div>
+        <p class="leading-relaxed text-slate-400">Kafiye Sokak, Ümraniye merkezli 7/24 mobil lastik, çekici ve akü yol yardım hizmetleri.</p>
+      </div>
+      <div>
+        <div class="text-base font-bold text-white mb-3">Hızlı Bağlantılar</div>
+        <ul class="space-y-2">
+          <li><a href="#top" class="hover:text-amber-400 transition">Ana Sayfa</a></li>
+          <li><a href="#hizmetlerimiz" class="hover:text-amber-400 transition">Hizmetlerimiz</a></li>
+          <li><a href="#sss" class="hover:text-amber-400 transition">S.S.S.</a></li>
+          <li><a href="#iletisim-konum" class="hover:text-amber-400 transition">İletişim & Konum</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="text-base font-bold text-white mb-3">Adresimiz</div>
+        <p class="leading-relaxed text-slate-400">Kafiye Sokak, Ümraniye / İstanbul</p>
+      </div>
+      <div>
+        <div class="text-base font-bold text-white mb-3">İletişim</div>
+        <p class="mb-2 text-slate-300"><i class="fa-solid fa-phone text-amber-400 mr-2"></i> 0532 509 71 58</p>
+        <p class="text-slate-300"><i class="fa-brands fa-whatsapp text-emerald-500 mr-2"></i> 0532 509 71 58</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Mobil Alt Bar -->
+  <div class="fixed bottom-0 left-0 right-0 bg-[#0B0F17]/95 backdrop-blur border-t border-brand-border p-3 md:hidden z-50 flex flex-col gap-2">
+    <a href="tel:05325097158" class="w-full bg-gradient-to-r from-amber-400 to-amber-500 text-slate-950 font-black py-3 rounded-xl text-center flex items-center justify-center gap-2 text-base shadow-md">
+      <i class="fa-solid fa-phone"></i> HEMEN ARA (7/24)
+    </a>
+    <a href="https://wa.me/905325097158?text=Merhaba,%20Kafiye%20Sokak/Ümraniye%20ekibinizden%20acil%20yardım%20istiyorum." target="_blank" class="w-full bg-emerald-600 text-white font-bold py-3 rounded-xl text-center flex items-center justify-center gap-2 text-base shadow-md">
+      <i class="fa-brands fa-whatsapp text-xl"></i> WHATSAPP KONUM AT
+    </a>
+  </div>
+
+  <script>
+    let selectedRating = 5;
+
+    function highlightStars(count) {
+      const stars = document.querySelectorAll('#starContainer i');
+      stars.forEach((star, index) => {
+        if (index < count) {
+          star.classList.add('text-amber-400');
+          star.classList.remove('text-slate-600');
+        } else {
+          star.classList.remove('text-amber-400');
+          star.classList.add('text-slate-600');
+        }
+      });
+    }
+
+    function resetStars() {
+      highlightStars(selectedRating);
+    }
+
+    function selectRating(count) {
+      selectedRating = count;
+      highlightStars(count);
+      document.getElementById('ratingText').innerText = `Seçilen Puan: ${count} / 5 Yıldız`;
+    }
+
+    function updateAverageRating() {
+      const cards = document.querySelectorAll('.comment-card');
+      let totalRating = 0;
+      let approvedCount = 0;
+
+      cards.forEach(card => {
+        const isApproved = card.getAttribute('data-approved') === 'true';
+        if (isApproved) {
+          const r = parseFloat(card.getAttribute('data-rating'));
+          if (!isNaN(r)) {
+            totalRating += r;
+            approvedCount++;
+          }
+        }
+      });
+
+      const avg = approvedCount > 0 ? (totalRating / approvedCount).toFixed(1) : "0.0";
+      document.getElementById('avgScoreDisplay').innerText = avg;
+      document.getElementById('totalReviewCount').innerText = approvedCount;
+
+      const starContainer = document.getElementById('avgStarsContainer');
+      const roundedAvg = Math.round(parseFloat(avg));
+      let starsHtml = '';
+      for (let i = 1; i <= 5; i++) {
+        if (i <= roundedAvg) {
+          starsHtml += '<i class="fa-solid fa-star"></i>';
+        } else {
+          starsHtml += '<i class="fa-regular fa-star text-slate-600"></i>';
+        }
+      }
+      starContainer.innerHTML = starsHtml;
+    }
+
+    let commentCounter = 100;
+    function handleCommentSubmit(e) {
+      e.preventDefault();
+      commentCounter++;
+      const id = `comment-${commentCounter}`;
+      const name = document.getElementById('authorName').value;
+      const comment = document.getElementById('commentText').value;
+
+      let starsHtml = '';
+      for (let i = 0; i < selectedRating; i++) {
+        starsHtml += '<i class="fa-solid fa-star"></i>';
+      }
+
+      const list = document.getElementById('yorumlar-listesi');
+      const newCard = document.createElement('div');
+      newCard.className = "bg-brand-card border border-amber-500/40 p-6 rounded-2xl transition-all duration-300 comment-card animate-fade-in";
+      newCard.id = id;
+      newCard.setAttribute('data-rating', selectedRating);
+      newCard.setAttribute('data-approved', 'false');
+      newCard.innerHTML = `
+        <div class="flex justify-between items-center mb-4">
+          <div class="flex text-amber-400 text-xs">${starsHtml}</div>
+          <span class="text-[10px] text-amber-400 font-semibold">Yeni Yorum</span>
+        </div>
+        <p class="text-slate-300 text-sm mb-4 leading-relaxed">"${comment}"</p>
+        <div class="flex items-center justify-between">
+          <div class="flex items-center gap-2">
+            <div class="w-8 h-8 rounded-full bg-amber-500 text-slate-950 flex items-center justify-center font-bold text-xs">${name.substring(0,2).toUpperCase()}</div>
+            <div>
+              <div class="font-bold text-xs text-slate-200">${name}</div>
+              <div class="status-badge text-[10px] text-amber-400 font-medium"><i class="fa-solid fa-clock mr-1"></i> Doğrulanmayı Bekliyor</div>
+            </div>
+          </div>
+          <div class="admin-controls flex gap-1">
+            <button onclick="toggleApproveComment('${id}')" title="Onayla / Kaldır" class="bg-emerald-500/20 hover:bg-emerald-500 text-emerald-400 hover:text-white text-[10px] px-2.5 py-1 rounded transition flex items-center gap-1"><i class="fa-solid fa-check"></i> Onayla</button>
+            <button onclick="deleteComment('${id}')" title="Sil" class="bg-rose-500/20 hover:bg-rose-500 text-rose-400 hover:text-white text-[10px] px-2 py-1 rounded transition"><i class="fa-solid fa-trash"></i></button>
+          </div>
+        </div>
+      `;
+      list.prepend(newCard);
+      document.getElementById('commentForm').reset();
+      selectRating(5);
+
+      updateAverageRating();
+
+      document.getElementById('successMsg').classList.remove('hidden');
+      setTimeout(() => {
+        document.getElementById('successMsg').classList.add('hidden');
+      }, 5000);
+    }
+
+    function toggleApproveComment(id) {
+      const card = document.getElementById(id);
+      if (card) {
+        const isApproved = card.getAttribute('data-approved') === 'true';
+        const badge = card.querySelector('.status-badge');
+        const btn = card.querySelector('.admin-controls button');
+
+        if (isApproved) {
+          card.setAttribute('data-approved', 'false');
+          badge.className = 'status-badge text-[10px] text-amber-400 font-medium';
+          badge.innerHTML = '<i class="fa-solid fa-clock mr-1"></i> Doğrulanmayı Bekliyor';
+          btn.innerHTML = '<i class="fa-solid fa-check"></i> Onayla';
+        } else {
+          card.setAttribute('data-approved', 'true');
+          badge.className = 'status-badge text-[10px] text-emerald-400 font-medium';
+          badge.innerHTML = '<i class="fa-solid fa-circle-check mr-1"></i> Doğrulanmış Hizmet';
+          btn.innerHTML = '<i class="fa-solid fa-xmark"></i> Onayı Kaldır';
+        }
+        
+        updateAverageRating();
+      }
+    }
+
+    function deleteComment(id) {
+      const card = document.getElementById(id);
+      if (card) {
+        card.remove();
+        updateAverageRating();
+      }
+    }
+
+    function handleContactSubmit(e) {
+      e.preventDefault();
+      document.getElementById('contactForm').reset();
+      document.getElementById('formSuccess').classList.remove('hidden');
+      setTimeout(() => {
+        document.getElementById('formSuccess').classList.add('hidden');
+      }, 6000);
+    }
+
+    selectRating(5);
+    updateAverageRating();
+  </script>
+
+</body>
+</html>
