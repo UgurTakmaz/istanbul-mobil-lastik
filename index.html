@@ -26,12 +26,12 @@
           },
           colors: {
             brand: {
-              black: '#020408',
-              dark: '#070C16',
-              card: '#0D1424',
-              cardHover: '#141E33',
-              border: '#1A263D',
-              borderLight: '#263756',
+              black: '#010204',
+              dark: '#060A12',
+              card: '#0B111E',
+              cardHover: '#121A2C',
+              border: '#172238',
+              borderLight: '#223250',
               gold: '#F59E0B',
               goldHover: '#D97706',
               goldLight: '#FDE68A',
@@ -50,7 +50,7 @@
 
   <style>
     body {
-      background-color: #020408;
+      background-color: #010204;
       color: #E2E8F0;
       font-family: 'Plus Jakarta Sans', sans-serif;
       overflow-x: hidden;
@@ -67,7 +67,7 @@
     }
 
     .hero-bg {
-      background: linear-gradient(to bottom, rgba(2, 4, 8, 0.8), rgba(2, 4, 8, 0.98)), 
+      background: linear-gradient(to bottom, rgba(1, 2, 4, 0.82), rgba(1, 2, 4, 0.98)), 
                   url('https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?auto=format&fit=crop&q=80&w=1920');
       background-size: cover;
       background-position: center;
@@ -77,22 +77,22 @@
     /* Leaflet Harita Karanlık Gece Filtresi */
     #fleetMap {
       width: 100%;
-      height: 580px;
+      height: 600px;
       border-radius: 1.5rem;
     }
     .leaflet-tile {
       filter: brightness(0.6) invert(1) contrast(2.2) hue-rotate(200deg) saturate(0.3) brightness(0.7);
     }
     .leaflet-popup-content-wrapper {
-      background: #0D1424 !important;
+      background: #0B111E !important;
       color: #E2E8F0 !important;
-      border: 1px solid #1A263D;
+      border: 1px solid #172238;
       border-radius: 16px;
       box-shadow: 0 20px 40px rgba(0,0,0,0.8);
       padding: 4px;
     }
     .leaflet-popup-tip {
-      background: #0D1424 !important;
+      background: #0B111E !important;
     }
 
     /* Harita Marker Efektleri */
@@ -111,7 +111,7 @@
       justify-content: center;
       color: white;
       box-shadow: 0 0 20px rgba(245, 158, 11, 0.4);
-      border: 2px solid #020408;
+      border: 2px solid #010204;
       transition: all 0.3s ease;
     }
     .car-icon-box.active-focused {
@@ -195,16 +195,16 @@
 
     /* Özel Scrollbar */
     ::-webkit-scrollbar { width: 8px; }
-    ::-webkit-scrollbar-track { background: #020408; }
-    ::-webkit-scrollbar-thumb { background: #1A263D; border-radius: 4px; }
+    ::-webkit-scrollbar-track { background: #010204; }
+    ::-webkit-scrollbar-thumb { background: #172238; border-radius: 4px; }
     ::-webkit-scrollbar-thumb:hover { background: #F59E0B; }
   </style>
 </head>
 <body id="top" class="antialiased selection:bg-amber-500 selection:text-slate-950">
 
   <!-- TOP BAR (ÜST BİLGİ ŞERİDİ) -->
-  <div class="bg-[#010204] border-b border-brand-border/60 text-xs py-2.5 px-6 hidden xl:block relative z-50">
-    <div class="max-w-[1400px] mx-auto flex justify-between items-center text-slate-400">
+  <div class="bg-[#000102] border-b border-brand-border/60 text-xs py-2.5 px-6 hidden xl:block relative z-50">
+    <div class="max-w-[1500px] mx-auto flex justify-between items-center text-slate-400">
       <div class="flex items-center gap-8">
         <span class="flex items-center gap-2">
           <span class="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse"></span>
@@ -229,9 +229,9 @@
     </div>
   </div>
 
-  <!-- HEADER / NAVEGASYON (SIKIŞIKLIK TAMAMEN GİDERİLDİ) -->
+  <!-- HEADER / NAVİGASYON (SIKIŞIKLIK TAMAMEN GİDERİLDİ - DÜZELTİLDİ) -->
   <header class="bg-brand-dark/95 backdrop-blur-2xl border-b border-brand-border sticky top-0 z-40 shadow-2xl">
-    <div class="max-w-[1400px] mx-auto px-6 py-4 flex justify-between items-center gap-6">
+    <div class="max-w-[1500px] mx-auto px-6 py-4 flex justify-between items-center gap-6">
       
       <!-- LOGO -->
       <a href="#top" class="flex items-center gap-3.5 shrink-0 group">
@@ -244,7 +244,7 @@
         </div>
       </a>
 
-      <!-- MASAÜSTÜ NAVİGASYON (GENİŞ NEFES ALAN ARALIKLAR) -->
+      <!-- MASAÜSTÜ NAVİGASYON (GENİŞ NEFES ALAN ARALIKLAR - TAŞMA YAPMAZ) -->
       <nav class="hidden xl:flex items-center gap-7 text-xs uppercase tracking-wider font-bold text-slate-300">
         <a href="#top" class="nav-link active py-1">Ana Sayfa</a>
         <a href="#servis-takibi" class="nav-link py-1 flex items-center gap-2">
@@ -259,10 +259,10 @@
         <a href="#yorumlar" class="nav-link py-1">Değerlendirmeler</a>
       </nav>
 
-      <!-- İLETİŞİM AKSİYON BUTONU (TAŞMA VE SIKIŞIKLIK YAPMAZ) -->
+      <!-- İLETİŞİM AKSİYON BUTONU (KOMPAKT & TAŞMA YAPMAYAN YAPI) -->
       <div class="flex items-center gap-4 shrink-0">
         <a href="tel:05325097158" class="hidden sm:flex bg-gradient-to-r from-amber-400 to-amber-500 hover:from-amber-500 hover:to-amber-600 text-slate-950 font-black px-5 py-3 rounded-2xl transition duration-300 items-center gap-2 text-xs shadow-lg shadow-amber-500/20 hover:scale-105">
-          <i class="fa-solid fa-phone text-sm"></i> 
+          <i class="fa-solid fa-phone text-sm animate-pulse"></i> 
           <span>ACİL ARA (0532 509 71 58)</span>
         </a>
         
@@ -327,8 +327,8 @@
     </div>
   </section>
 
-  <!-- CANLI SERVİS TAKİBİ (SMOOTH 60 FPS LERP & FLYTO FİXED) -->
-  <section id="servis-takibi" class="max-w-[1400px] mx-auto px-6 py-24 border-b border-brand-border">
+  <!-- CANLI SERVİS TAKİBİ (SMOOTH REALISTIC LERP ENGINE & FLYTO FIX) -->
+  <section id="servis-takibi" class="max-w-[1500px] mx-auto px-6 py-24 border-b border-brand-border">
     <div class="text-center mb-12">
       <div class="inline-flex items-center gap-2 bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs font-bold px-4 py-2 rounded-full mb-4">
         <span class="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-ping"></span> GPS CANLI TELEMETRİ & YÖN SİMÜLASYONU
@@ -343,7 +343,7 @@
         <div id="fleetMap"></div>
         <div class="absolute top-6 left-6 z-[400] bg-brand-dark/95 border border-brand-border backdrop-blur-md px-4 py-2.5 rounded-xl text-xs flex items-center gap-3 text-slate-200 shadow-2xl">
           <i class="fa-solid fa-satellite-dish text-emerald-400 animate-pulse text-sm"></i>
-          <span>GPS Canlı Konum Aktif (60 FPS Smooth Tracking)</span>
+          <span>GPS Canlı Konum Aktif (Realistic Smooth Speed)</span>
         </div>
       </div>
 
@@ -355,7 +355,7 @@
   </section>
 
   <!-- YOL VE TRAFİK DURUMU -->
-  <section id="traffik-durumu" class="max-w-[1400px] mx-auto px-6 py-24 border-b border-brand-border">
+  <section id="traffik-durumu" class="max-w-[1500px] mx-auto px-6 py-24 border-b border-brand-border">
     <div class="text-center mb-12">
       <span class="text-amber-400 text-xs font-bold tracking-widest uppercase mb-2 block">ANLIK ŞEHİR ANALİZİ</span>
       <h2 class="text-3xl md:text-4xl font-black mb-3 gold-gradient-text font-heading">İstanbul Acil Yol & Yoğunluk Durumu</h2>
@@ -368,7 +368,7 @@
   </section>
 
   <!-- ARIZA TEŞHİS ASİSTANI -->
-  <section id="teshis-asistani" class="max-w-[1400px] mx-auto px-6 py-24 border-b border-brand-border">
+  <section id="teshis-asistani" class="max-w-[1500px] mx-auto px-6 py-24 border-b border-brand-border">
     <div class="text-center mb-14">
       <span class="text-amber-400 text-xs font-bold tracking-widest uppercase mb-2 block">AKILLI TEŞHİS MODÜLÜ</span>
       <h2 class="text-3xl md:text-5xl font-black mb-4 gold-gradient-text font-heading">Aracınızdaki Sorun Nedir?</h2>
@@ -420,7 +420,7 @@
   </section>
 
   <!-- HİZMETLERİMİZ -->
-  <section id="hizmetlerimiz" class="max-w-[1400px] mx-auto px-6 py-24 border-b border-brand-border">
+  <section id="hizmetlerimiz" class="max-w-[1500px] mx-auto px-6 py-24 border-b border-brand-border">
     <div class="text-center mb-16">
       <span class="text-amber-400 text-xs font-bold tracking-widest uppercase mb-2 block">HİZMETLERİMİZ</span>
       <h2 class="text-3xl md:text-5xl font-black mb-4 gold-gradient-text font-heading">Profesyonel Yol Yardım Çözümleri</h2>
@@ -440,7 +440,7 @@
               <div class="w-12 h-12 bg-amber-500/20 text-amber-400 rounded-2xl flex items-center justify-center text-xl"><i class="fa-solid fa-wrench"></i></div>
               <h3 class="text-xl font-bold text-white font-heading">Lastik Tamiri & Stepne</h3>
             </div>
-            <p class="text-slate-400 text-xs mb-6 leading-relaxed">Çivi batması, patlama veya hava inmesi durumunda yerinde fitil/yama tamiri veya yedek stepne montajı.</p>
+            <p class="text-slate-400 text-xs mb-6 leading-relaxed">Çivi batması, patlama veya hava inmesi durumunda fitil/yama tamiri veya yedek stepne montajı.</p>
           </div>
           <a href="https://wa.me/905325097158?text=Merhaba,%20Lastik%20Tamiri%20ve%20Stepne%20Takma%20hizmeti%20istiyorum." target="_blank" class="w-full bg-slate-800 hover:bg-amber-500 hover:text-slate-950 text-amber-400 font-bold py-3 rounded-xl transition text-xs text-center flex items-center justify-center gap-2 border border-amber-500/30">
             Servis Çağır <i class="fa-solid fa-chevron-right text-[10px]"></i>
@@ -489,7 +489,7 @@
     </div>
   </section>
 
-  <!-- İNTERAKTİF FİYAT HESAPLAMA SİMÜLATÖRÜ 4.0 -->
+  <!-- İNTERAKTİF FİYAT HESAPLAMA SİMÜLATÖRÜ -->
   <section id="fiyat-hesapla" class="max-w-5xl mx-auto px-6 py-24 border-b border-brand-border">
     <div class="text-center mb-12">
       <span class="text-amber-400 text-xs font-bold tracking-widest uppercase mb-2 block">ŞEFFAF FİYAT KONTROLÜ</span>
@@ -628,7 +628,7 @@
   </section>
 
   <!-- YORUMLAR -->
-  <section id="yorumlar" class="max-w-[1400px] mx-auto px-6 py-24 border-b border-brand-border">
+  <section id="yorumlar" class="max-w-[1500px] mx-auto px-6 py-24 border-b border-brand-border">
     <div class="text-center mb-16">
       <h2 class="text-3xl md:text-5xl font-black mb-4 gold-gradient-text font-heading">Müşteri Yorumları & Değerlendirmeler</h2>
       <p class="text-slate-400 text-sm">Gerçek müşterilerimizin deneyimleri ve doğrulanan hizmet puanları.</p>
@@ -707,7 +707,7 @@
   </section>
 
   <!-- İLETİŞİM & KONUM -->
-  <section id="iletisim-konum" class="max-w-[1400px] mx-auto px-6 py-24">
+  <section id="iletisim-konum" class="max-w-[1500px] mx-auto px-6 py-24">
     <div class="text-center mb-16">
       <span class="text-amber-400 text-xs font-bold tracking-widest uppercase mb-2 block">İLETİŞİM & KONUM</span>
       <h2 class="text-3xl md:text-5xl font-black mb-4 gold-gradient-text font-heading">Bize Ulaşın</h2>
@@ -757,8 +757,8 @@
   </section>
 
   <!-- FOOTER -->
-  <footer class="bg-[#010204] text-slate-500 text-xs py-16 border-t border-brand-border">
-    <div class="max-w-[1400px] mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-10 mb-10">
+  <footer class="bg-[#000102] text-slate-500 text-xs py-16 border-t border-brand-border">
+    <div class="max-w-[1500px] mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-10 mb-10">
       <div>
         <div class="text-base font-bold text-white mb-4 font-heading">İstanbul Auto Yol Yardım</div>
         <p class="leading-relaxed text-slate-400">Ümraniye merkezli 7/24 mobil lastik, çekici, akü takviye ve yerinde oto servis hizmetleri.</p>
@@ -782,13 +782,13 @@
         <p class="text-slate-300 font-bold"><i class="fa-brands fa-whatsapp text-emerald-500 mr-2"></i> 0532 509 71 58</p>
       </div>
     </div>
-    <div class="max-w-[1400px] mx-auto px-6 pt-8 border-t border-brand-border/40 text-center text-xs text-slate-600">
+    <div class="max-w-[1500px] mx-auto px-6 pt-8 border-t border-brand-border/40 text-center text-xs text-slate-600">
       &copy; 2026 İstanbul Auto Mobil Yol Yardım. Tüm hakları saklıdır.
     </div>
   </footer>
 
   <!-- MOBİL FLOATING BAR -->
-  <div class="fixed bottom-0 left-0 right-0 bg-[#020408]/95 backdrop-blur-md border-t border-brand-border p-3 xl:hidden z-50 flex gap-3">
+  <div class="fixed bottom-0 left-0 right-0 bg-[#010204]/95 backdrop-blur-md border-t border-brand-border p-3 xl:hidden z-50 flex gap-3">
     <a href="tel:05325097158" class="flex-1 bg-gradient-to-r from-amber-400 to-amber-500 text-slate-950 font-black py-3.5 rounded-xl text-center flex items-center justify-center gap-2 text-sm shadow-md">
       <i class="fa-solid fa-phone"></i> ARA (7/24)
     </a>
@@ -1006,7 +1006,7 @@
       }
     }
 
-    // 7. GERÇEKÇİ 60 FPS CANLI HARİTA & FLYTO SIFIR HATA FİX
+    // 7. GERÇEKÇİ 60 FPS CANLI HARİTA & SIFIR HATA FLYTO ENGINE
     const map = L.map('fleetMap', { center: [41.015137, 28.979530], zoom: 10 });
 
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -1087,7 +1087,7 @@
       markers.push({ id: v.id, marker, data: v, lat: startPos[0], lng: startPos[1] });
     });
 
-    // Araç Odaklama (FlyTo Animation Fix)
+    // Araç Odaklama (Kusursuz FlyTo Animation)
     function focusVehicle(id) {
       const targetItem = markers.find(m => m.id === id);
       if (targetItem) {
@@ -1100,7 +1100,7 @@
       }
     }
 
-    // 60 FPS Smooth Movement Algorithm (LERP)
+    // 60 FPS Hassas Gerçekçi Hız Algoritması (Gerçek Hızlı Işınlanma Engellendi)
     function animateVehicles() {
       markers.forEach(item => {
         const v = item.data;
@@ -1108,7 +1108,7 @@
         const nextWpIndex = (v.currentWaypoint + 1) % v.route.length;
         const nextWp = v.route[nextWpIndex];
 
-        v.progress += 0.0025; // Hız Faktörü
+        v.progress += 0.0005; // Hassas ve Yumuşak Hız Katsayısı (Düzeltildi)
         if (v.progress >= 1) {
           v.progress = 0;
           v.currentWaypoint = nextWpIndex;
