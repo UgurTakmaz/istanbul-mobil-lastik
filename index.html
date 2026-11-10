@@ -11,7 +11,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <!-- Leaflet CSS -->
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
-  <!-- Google Fonts (Outfit & Plus Jakarta Sans) -->
+  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -26,12 +26,12 @@
           },
           colors: {
             brand: {
-              black: '#030508',
-              dark: '#080C14',
-              card: '#0F1623',
-              cardHover: '#162032',
-              border: '#1E293D',
-              borderLight: '#2A3B55',
+              black: '#020408',
+              dark: '#070C16',
+              card: '#0D1424',
+              cardHover: '#141E33',
+              border: '#1A263D',
+              borderLight: '#263756',
               gold: '#F59E0B',
               goldHover: '#D97706',
               goldLight: '#FDE68A',
@@ -39,9 +39,9 @@
             }
           },
           boxShadow: {
-            'gold-glow': '0 0 30px rgba(245, 158, 11, 0.2)',
-            'emerald-glow': '0 0 30px rgba(16, 185, 129, 0.2)',
-            'glass': '0 8px 32px 0 rgba(0, 0, 0, 0.5)'
+            'gold-glow': '0 0 35px rgba(245, 158, 11, 0.25)',
+            'emerald-glow': '0 0 35px rgba(16, 185, 129, 0.25)',
+            'glass': '0 10px 40px rgba(0, 0, 0, 0.6)'
           }
         }
       }
@@ -50,7 +50,7 @@
 
   <style>
     body {
-      background-color: #030508;
+      background-color: #020408;
       color: #E2E8F0;
       font-family: 'Plus Jakarta Sans', sans-serif;
       overflow-x: hidden;
@@ -60,52 +60,47 @@
       font-family: 'Outfit', sans-serif;
     }
 
-    /* Premium Metallic Gold Gradient */
     .gold-gradient-text {
-      background: linear-gradient(135deg, #FFFBEB 0%, #F59E0B 45%, #B45309 100%);
+      background: linear-gradient(135deg, #FFFBEB 0%, #F59E0B 50%, #B45309 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
 
-    .gold-gradient-bg {
-      background: linear-gradient(135deg, #F59E0B 0%, #D97706 100%);
-    }
-
     .hero-bg {
-      background: linear-gradient(to bottom, rgba(3, 5, 8, 0.75), rgba(3, 5, 8, 0.98)), 
+      background: linear-gradient(to bottom, rgba(2, 4, 8, 0.8), rgba(2, 4, 8, 0.98)), 
                   url('https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?auto=format&fit=crop&q=80&w=1920');
       background-size: cover;
       background-position: center;
       background-attachment: fixed;
     }
 
-    /* Leaflet Harita Gece Filtresi */
+    /* Leaflet Harita Karanlık Gece Filtresi */
     #fleetMap {
       width: 100%;
-      height: 560px;
+      height: 580px;
       border-radius: 1.5rem;
     }
     .leaflet-tile {
       filter: brightness(0.6) invert(1) contrast(2.2) hue-rotate(200deg) saturate(0.3) brightness(0.7);
     }
     .leaflet-popup-content-wrapper {
-      background: #0F1623 !important;
+      background: #0D1424 !important;
       color: #E2E8F0 !important;
-      border: 1px solid #1E293D;
+      border: 1px solid #1A263D;
       border-radius: 16px;
       box-shadow: 0 20px 40px rgba(0,0,0,0.8);
       padding: 4px;
     }
     .leaflet-popup-tip {
-      background: #0F1623 !important;
+      background: #0D1424 !important;
     }
 
-    /* Araç Harita İkonu Efekti */
+    /* Harita Marker Efektleri */
     .vehicle-marker-badge {
       display: flex;
       flex-direction: column;
       align-items: center;
-      transition: transform 0.2s ease-out;
+      transition: transform 0.3s ease;
     }
     .car-icon-box {
       width: 44px;
@@ -116,12 +111,12 @@
       justify-content: center;
       color: white;
       box-shadow: 0 0 20px rgba(245, 158, 11, 0.4);
-      border: 2px solid #030508;
+      border: 2px solid #020408;
       transition: all 0.3s ease;
     }
     .car-icon-box.active-focused {
-      transform: scale(1.25);
-      box-shadow: 0 0 35px rgba(16, 185, 129, 0.8);
+      transform: scale(1.3);
+      box-shadow: 0 0 40px rgba(16, 185, 129, 0.9);
       border-color: #10B981;
     }
 
@@ -134,13 +129,13 @@
       box-shadow: 0 4px 12px rgba(0,0,0,0.6);
       white-space: nowrap;
       margin-bottom: 4px;
-      letter-spacing: 0.5px;
     }
 
-    /* Navigasyon Link Animasyonu */
+    /* Navigasyon Link Animasyonları */
     .nav-link {
       position: relative;
       transition: color 0.3s ease;
+      white-space: nowrap;
     }
     .nav-link::after {
       content: '';
@@ -161,33 +156,32 @@
       color: #F59E0B;
     }
 
-    /* S.S.S Accordion Smooth Transition */
+    /* S.S.S Accordion Animasyonları */
     .faq-answer {
       max-height: 0;
       overflow: hidden;
-      transition: max-height 0.4s cubic-bezier(0, 1, 0, 1), opacity 0.3s ease, padding 0.3s ease;
+      transition: max-height 0.4s ease, opacity 0.3s ease, padding 0.3s ease;
       opacity: 0;
     }
     .faq-item.open .faq-answer {
-      max-height: 500px;
+      max-height: 400px;
       opacity: 1;
       padding-bottom: 1.5rem;
       padding-top: 0.75rem;
-      transition: max-height 0.4s cubic-bezier(1, 0, 1, 0), opacity 0.3s ease, padding 0.3s ease;
     }
     .faq-item.open .faq-icon {
       transform: rotate(180deg);
       color: #F59E0B;
     }
 
-    /* Animasyonlu Yıldız Derecelendirme */
+    /* Yıldız Derecelendirme */
     .star-rating i {
       cursor: pointer;
       transition: transform 0.2s ease, color 0.2s ease;
     }
     .star-rating i:hover { transform: scale(1.35) rotate(10deg); }
 
-    /* Custom Toast Animasyonları */
+    /* Toast Bildirim Animasyonu */
     @keyframes slideInUp {
       from { transform: translateY(100%) scale(0.9); opacity: 0; }
       to { transform: translateY(0) scale(1); opacity: 1; }
@@ -201,31 +195,31 @@
 
     /* Özel Scrollbar */
     ::-webkit-scrollbar { width: 8px; }
-    ::-webkit-scrollbar-track { background: #030508; }
-    ::-webkit-scrollbar-thumb { background: #1E293D; border-radius: 4px; }
+    ::-webkit-scrollbar-track { background: #020408; }
+    ::-webkit-scrollbar-thumb { background: #1A263D; border-radius: 4px; }
     ::-webkit-scrollbar-thumb:hover { background: #F59E0B; }
   </style>
 </head>
 <body id="top" class="antialiased selection:bg-amber-500 selection:text-slate-950">
 
-  <!-- TOP INFORMATION BAR -->
-  <div class="bg-[#020305] border-b border-brand-border/60 text-xs py-2.5 px-4 hidden lg:block relative z-50">
-    <div class="max-w-7xl mx-auto flex justify-between items-center text-slate-400">
+  <!-- TOP BAR (ÜST BİLGİ ŞERİDİ) -->
+  <div class="bg-[#010204] border-b border-brand-border/60 text-xs py-2.5 px-6 hidden xl:block relative z-50">
+    <div class="max-w-[1400px] mx-auto flex justify-between items-center text-slate-400">
       <div class="flex items-center gap-8">
         <span class="flex items-center gap-2">
-          <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+          <span class="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse"></span>
           <strong class="text-slate-200">7/24 Nöbetçi Mobil Filo:</strong> Ümraniye, Kadıköy, Şişli & Tüm Hatlar
         </span>
         <span class="flex items-center gap-2">
-          <i class="fa-solid fa-credit-card text-amber-400"></i> Kapıda Kredi Kartı / Temassız POS
+          <i class="fa-solid fa-credit-card text-amber-400"></i> Kapıda Temassız Kredi Kartı POS
         </span>
         <span class="flex items-center gap-2">
-          <i class="fa-solid fa-shield-halved text-emerald-400"></i> Servis Garantili İşçilik
+          <i class="fa-solid fa-shield-halved text-emerald-400"></i> 1 Yıl Servis Garantili İşçilik
         </span>
       </div>
 
-      <div class="flex items-center gap-5">
-        <button onclick="openAdminModal()" class="text-xs bg-brand-card hover:bg-amber-500 hover:text-slate-950 text-slate-300 px-3.5 py-1.5 rounded-lg transition font-semibold border border-brand-border flex items-center gap-2">
+      <div class="flex items-center gap-6">
+        <button onclick="openAdminModal()" class="text-xs bg-brand-card hover:bg-amber-500 hover:text-slate-950 text-slate-300 px-3.5 py-1.5 rounded-xl transition font-semibold border border-brand-border flex items-center gap-2">
           <i class="fa-solid fa-user-shield text-amber-400"></i> Yönetici Paneli
         </button>
         <a href="tel:05325097158" class="text-amber-400 font-extrabold hover:text-white transition flex items-center gap-2">
@@ -235,13 +229,13 @@
     </div>
   </div>
 
-  <!-- HEADER / NAVIGATION (GENİŞLETİLMİŞ VE NEFES ALAN YAPI) -->
-  <header class="bg-brand-dark/90 backdrop-blur-xl border-b border-brand-border sticky top-0 z-40 shadow-2xl">
-    <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+  <!-- HEADER / NAVEGASYON (SIKIŞIKLIK TAMAMEN GİDERİLDİ) -->
+  <header class="bg-brand-dark/95 backdrop-blur-2xl border-b border-brand-border sticky top-0 z-40 shadow-2xl">
+    <div class="max-w-[1400px] mx-auto px-6 py-4 flex justify-between items-center gap-6">
       
       <!-- LOGO -->
-      <a href="#top" class="flex items-center gap-3.5 group">
-        <div class="w-11 h-11 bg-gradient-to-tr from-[#B45309] via-[#F59E0B] to-[#FFFBEB] text-slate-950 rounded-2xl flex items-center justify-center font-black text-2xl shadow-lg shadow-amber-500/20 group-hover:scale-105 transition transform duration-300">
+      <a href="#top" class="flex items-center gap-3.5 shrink-0 group">
+        <div class="w-11 h-11 bg-gradient-to-tr from-[#B45309] via-[#F59E0B] to-[#FFFBEB] text-slate-950 rounded-2xl flex items-center justify-center font-black text-2xl shadow-lg shadow-amber-500/20 group-hover:scale-105 transition transform">
           <i class="fa-solid fa-truck-monster"></i>
         </div>
         <div>
@@ -250,8 +244,8 @@
         </div>
       </a>
 
-      <!-- MASAÜSTÜ NAVİGASYON (RAHAT SPACING) -->
-      <nav class="hidden lg:flex items-center gap-8 text-xs uppercase tracking-wider font-bold text-slate-300">
+      <!-- MASAÜSTÜ NAVİGASYON (GENİŞ NEFES ALAN ARALIKLAR) -->
+      <nav class="hidden xl:flex items-center gap-7 text-xs uppercase tracking-wider font-bold text-slate-300">
         <a href="#top" class="nav-link active py-1">Ana Sayfa</a>
         <a href="#servis-takibi" class="nav-link py-1 flex items-center gap-2">
           <span class="w-2 h-2 rounded-full bg-emerald-500 animate-ping"></span> Live Takip
@@ -265,22 +259,22 @@
         <a href="#yorumlar" class="nav-link py-1">Değerlendirmeler</a>
       </nav>
 
-      <!-- İLETİŞİM AKSİYON BUTONLARI -->
-      <div class="flex items-center gap-4">
-        <a href="tel:05325097158" class="hidden sm:flex bg-gradient-to-r from-amber-400 to-amber-500 hover:from-amber-500 hover:to-amber-600 text-slate-950 font-black px-5 py-3 rounded-2xl transition duration-300 items-center gap-2.5 text-xs shadow-lg shadow-amber-500/20 hover:scale-105">
+      <!-- İLETİŞİM AKSİYON BUTONU (TAŞMA VE SIKIŞIKLIK YAPMAZ) -->
+      <div class="flex items-center gap-4 shrink-0">
+        <a href="tel:05325097158" class="hidden sm:flex bg-gradient-to-r from-amber-400 to-amber-500 hover:from-amber-500 hover:to-amber-600 text-slate-950 font-black px-5 py-3 rounded-2xl transition duration-300 items-center gap-2 text-xs shadow-lg shadow-amber-500/20 hover:scale-105">
           <i class="fa-solid fa-phone text-sm"></i> 
-          <span>0532 509 71 58</span>
+          <span>ACİL ARA (0532 509 71 58)</span>
         </a>
         
-        <!-- Mobil Menü Aç/Kapat Butonu -->
-        <button id="mobileMenuBtn" onclick="toggleMobileMenu()" class="lg:hidden text-slate-300 hover:text-amber-400 text-2xl p-2 focus:outline-none rounded-xl bg-brand-card border border-brand-border">
+        <!-- Mobil Menü Butonu -->
+        <button id="mobileMenuBtn" onclick="toggleMobileMenu()" class="xl:hidden text-slate-300 hover:text-amber-400 text-2xl p-2.5 focus:outline-none rounded-xl bg-brand-card border border-brand-border">
           <i class="fa-solid fa-bars" id="menuIcon"></i>
         </button>
       </div>
     </div>
 
-    <!-- MOBİL DROPDOWN MENÜ -->
-    <div id="mobileMenu" class="hidden lg:hidden bg-brand-card border-b border-brand-border px-6 py-6 space-y-4 text-sm backdrop-blur-xl">
+    <!-- MOBİL MENÜ DROPDOWN -->
+    <div id="mobileMenu" class="hidden xl:hidden bg-brand-card border-b border-brand-border px-6 py-6 space-y-4 text-sm backdrop-blur-2xl">
       <a href="#top" onclick="toggleMobileMenu()" class="block text-slate-200 hover:text-amber-400 font-semibold">Ana Sayfa</a>
       <a href="#servis-takibi" onclick="toggleMobileMenu()" class="block text-emerald-400 font-bold flex items-center gap-2">
         <span class="w-2 h-2 rounded-full bg-emerald-500 animate-ping"></span> Canlı Servis Takibi
@@ -324,18 +318,17 @@
         </a>
       </div>
 
-      <!-- ÖZELLİK ROZETLERİ -->
       <div class="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto pt-8 border-t border-brand-border/60 text-xs text-slate-400">
-        <div class="flex items-center justify-center gap-2.5 bg-brand-card/40 p-3 rounded-xl border border-brand-border/40"><i class="fa-solid fa-bolt text-amber-400 text-base"></i> Ortalama 20 Dk Ulaşım</div>
-        <div class="flex items-center justify-center gap-2.5 bg-brand-card/40 p-3 rounded-xl border border-brand-border/40"><i class="fa-solid fa-credit-card text-amber-400 text-base"></i> Kapıda Temassız POS</div>
-        <div class="flex items-center justify-center gap-2.5 bg-brand-card/40 p-3 rounded-xl border border-brand-border/40"><i class="fa-solid fa-shield-check text-amber-400 text-base"></i> 1 Yıl Garantili İşçilik</div>
-        <div class="flex items-center justify-center gap-2.5 bg-brand-card/40 p-3 rounded-xl border border-brand-border/40"><i class="fa-solid fa-clock text-amber-400 text-base"></i> 7/24 Nöbetçi Ustalar</div>
+        <div class="flex items-center justify-center gap-2.5 bg-brand-card/40 p-3.5 rounded-xl border border-brand-border/40"><i class="fa-solid fa-bolt text-amber-400 text-base"></i> Ortalama 20 Dk Ulaşım</div>
+        <div class="flex items-center justify-center gap-2.5 bg-brand-card/40 p-3.5 rounded-xl border border-brand-border/40"><i class="fa-solid fa-credit-card text-amber-400 text-base"></i> Kapıda Temassız POS</div>
+        <div class="flex items-center justify-center gap-2.5 bg-brand-card/40 p-3.5 rounded-xl border border-brand-border/40"><i class="fa-solid fa-shield-check text-amber-400 text-base"></i> 1 Yıl Garantili İşçilik</div>
+        <div class="flex items-center justify-center gap-2.5 bg-brand-card/40 p-3.5 rounded-xl border border-brand-border/40"><i class="fa-solid fa-clock text-amber-400 text-base"></i> 7/24 Nöbetçi Ustalar</div>
       </div>
     </div>
   </section>
 
-  <!-- CANLI SERVİS TAKİBİ BÖLÜMÜ (MÜKEMMEL FPS TELEMETRİ VE FLYTO FİX) -->
-  <section id="servis-takibi" class="max-w-7xl mx-auto px-6 py-24 border-b border-brand-border">
+  <!-- CANLI SERVİS TAKİBİ (SMOOTH 60 FPS LERP & FLYTO FİXED) -->
+  <section id="servis-takibi" class="max-w-[1400px] mx-auto px-6 py-24 border-b border-brand-border">
     <div class="text-center mb-12">
       <div class="inline-flex items-center gap-2 bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs font-bold px-4 py-2 rounded-full mb-4">
         <span class="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-ping"></span> GPS CANLI TELEMETRİ & YÖN SİMÜLASYONU
@@ -345,7 +338,7 @@
     </div>
 
     <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-      <!-- HARİTA EKRANI -->
+      <!-- HARİTA -->
       <div class="lg:col-span-7 bg-brand-card border border-brand-border rounded-3xl overflow-hidden shadow-2xl relative p-2">
         <div id="fleetMap"></div>
         <div class="absolute top-6 left-6 z-[400] bg-brand-dark/95 border border-brand-border backdrop-blur-md px-4 py-2.5 rounded-xl text-xs flex items-center gap-3 text-slate-200 shadow-2xl">
@@ -356,13 +349,13 @@
 
       <!-- ARAÇ LİSTESİ -->
       <div class="lg:col-span-5 space-y-4" id="fleet-list-container">
-        <!-- JS dinamik doldurur -->
+        <!-- JS dinamik besler -->
       </div>
     </div>
   </section>
 
-  <!-- YENİ MODÜL: İSTANBUL ACİL YOL VE TRAFİK DURUMU -->
-  <section id="traffik-durumu" class="max-w-7xl mx-auto px-6 py-24 border-b border-brand-border">
+  <!-- YOL VE TRAFİK DURUMU -->
+  <section id="traffik-durumu" class="max-w-[1400px] mx-auto px-6 py-24 border-b border-brand-border">
     <div class="text-center mb-12">
       <span class="text-amber-400 text-xs font-bold tracking-widest uppercase mb-2 block">ANLIK ŞEHİR ANALİZİ</span>
       <h2 class="text-3xl md:text-4xl font-black mb-3 gold-gradient-text font-heading">İstanbul Acil Yol & Yoğunluk Durumu</h2>
@@ -370,12 +363,12 @@
     </div>
 
     <div class="grid grid-cols-1 md:grid-cols-4 gap-6" id="traffic-status-grid">
-      <!-- JS Dinamik Yükler -->
+      <!-- JS Dinamik Besler -->
     </div>
   </section>
 
-  <!-- YENİ MODÜL: ARIZA TEŞHİS & AKILLI SERVİS ASİSTANI -->
-  <section id="teshis-asistani" class="max-w-7xl mx-auto px-6 py-24 border-b border-brand-border">
+  <!-- ARIZA TEŞHİS ASİSTANI -->
+  <section id="teshis-asistani" class="max-w-[1400px] mx-auto px-6 py-24 border-b border-brand-border">
     <div class="text-center mb-14">
       <span class="text-amber-400 text-xs font-bold tracking-widest uppercase mb-2 block">AKILLI TEŞHİS MODÜLÜ</span>
       <h2 class="text-3xl md:text-5xl font-black mb-4 gold-gradient-text font-heading">Aracınızdaki Sorun Nedir?</h2>
@@ -426,8 +419,8 @@
     </div>
   </section>
 
-  <!-- HİZMETLERİMİZ BÖLÜMÜ -->
-  <section id="hizmetlerimiz" class="max-w-7xl mx-auto px-6 py-24 border-b border-brand-border">
+  <!-- HİZMETLERİMİZ -->
+  <section id="hizmetlerimiz" class="max-w-[1400px] mx-auto px-6 py-24 border-b border-brand-border">
     <div class="text-center mb-16">
       <span class="text-amber-400 text-xs font-bold tracking-widest uppercase mb-2 block">HİZMETLERİMİZ</span>
       <h2 class="text-3xl md:text-5xl font-black mb-4 gold-gradient-text font-heading">Profesyonel Yol Yardım Çözümleri</h2>
@@ -562,7 +555,7 @@
     </div>
   </section>
 
-  <!-- YENİ MODÜL: DİJİTAL SERVİS FİŞİ VE GARANTİ SORGULAMA -->
+  <!-- GARANTİ SORGULAMA -->
   <section id="garanti-sorgula" class="max-w-4xl mx-auto px-6 py-24 border-b border-brand-border">
     <div class="text-center mb-12">
       <span class="text-amber-400 text-xs font-bold tracking-widest uppercase mb-2 block">ŞEFFAFLIK & GÜVEN</span>
@@ -587,7 +580,7 @@
     </div>
   </section>
 
-  <!-- S.S.S. BÖLÜMÜ -->
+  <!-- S.S.S. -->
   <section id="sss" class="max-w-4xl mx-auto px-6 py-24 border-b border-brand-border">
     <div class="text-center mb-16">
       <span class="text-amber-400 text-xs font-bold tracking-widest uppercase mb-2 block">AKLINIZA TAKILANLAR</span>
@@ -634,8 +627,8 @@
     </div>
   </section>
 
-  <!-- YORUMLAR BÖLÜMÜ -->
-  <section id="yorumlar" class="max-w-7xl mx-auto px-6 py-24 border-b border-brand-border">
+  <!-- YORUMLAR -->
+  <section id="yorumlar" class="max-w-[1400px] mx-auto px-6 py-24 border-b border-brand-border">
     <div class="text-center mb-16">
       <h2 class="text-3xl md:text-5xl font-black mb-4 gold-gradient-text font-heading">Müşteri Yorumları & Değerlendirmeler</h2>
       <p class="text-slate-400 text-sm">Gerçek müşterilerimizin deneyimleri ve doğrulanan hizmet puanları.</p>
@@ -660,7 +653,7 @@
 
     <!-- Yorumlar Grid -->
     <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16" id="yorumlar-listesi">
-      <!-- JS Dinamik Yükler -->
+      <!-- JS Dinamik Besler -->
     </div>
 
     <!-- Yorum Formu -->
@@ -713,8 +706,8 @@
     </div>
   </section>
 
-  <!-- İLETİŞİM & KONUM BÖLÜMÜ -->
-  <section id="iletisim-konum" class="max-w-7xl mx-auto px-6 py-24">
+  <!-- İLETİŞİM & KONUM -->
+  <section id="iletisim-konum" class="max-w-[1400px] mx-auto px-6 py-24">
     <div class="text-center mb-16">
       <span class="text-amber-400 text-xs font-bold tracking-widest uppercase mb-2 block">İLETİŞİM & KONUM</span>
       <h2 class="text-3xl md:text-5xl font-black mb-4 gold-gradient-text font-heading">Bize Ulaşın</h2>
@@ -722,7 +715,6 @@
     </div>
     
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16">
-      <!-- Detaylar -->
       <div class="bg-brand-card border border-brand-border p-10 rounded-3xl space-y-8 shadow-2xl">
         <div class="flex items-start gap-5">
           <div class="w-14 h-14 bg-amber-500/10 text-amber-400 rounded-2xl flex items-center justify-center text-2xl shrink-0 border border-amber-500/20">
@@ -758,7 +750,6 @@
         </div>
       </div>
 
-      <!-- Google Maps -->
       <div class="bg-brand-card border border-brand-border rounded-3xl overflow-hidden min-h-[380px] shadow-2xl">
         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d48182.20315758079!2d29.0833299!3d41.0255977!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14cac8d1a1b15c77%3A0x8bbd3ed65c71a396!2zw5JtcmFuaXllL8Swc3RhbmJ1bA!5e0!3m2!1str!2str!4v1710000000000!5m2!1str!2str" class="w-full h-full border-0 min-h-[380px]" allowfullscreen="" loading="lazy"></iframe>
       </div>
@@ -766,8 +757,8 @@
   </section>
 
   <!-- FOOTER -->
-  <footer class="bg-[#020305] text-slate-500 text-xs py-16 border-t border-brand-border">
-    <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-10 mb-10">
+  <footer class="bg-[#010204] text-slate-500 text-xs py-16 border-t border-brand-border">
+    <div class="max-w-[1400px] mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-10 mb-10">
       <div>
         <div class="text-base font-bold text-white mb-4 font-heading">İstanbul Auto Yol Yardım</div>
         <p class="leading-relaxed text-slate-400">Ümraniye merkezli 7/24 mobil lastik, çekici, akü takviye ve yerinde oto servis hizmetleri.</p>
@@ -791,13 +782,13 @@
         <p class="text-slate-300 font-bold"><i class="fa-brands fa-whatsapp text-emerald-500 mr-2"></i> 0532 509 71 58</p>
       </div>
     </div>
-    <div class="max-w-7xl mx-auto px-6 pt-8 border-t border-brand-border/40 text-center text-xs text-slate-600">
+    <div class="max-w-[1400px] mx-auto px-6 pt-8 border-t border-brand-border/40 text-center text-xs text-slate-600">
       &copy; 2026 İstanbul Auto Mobil Yol Yardım. Tüm hakları saklıdır.
     </div>
   </footer>
 
-  <!-- MOBIL FLOATING BAR -->
-  <div class="fixed bottom-0 left-0 right-0 bg-[#030508]/95 backdrop-blur-md border-t border-brand-border p-3 md:hidden z-50 flex gap-3">
+  <!-- MOBİL FLOATING BAR -->
+  <div class="fixed bottom-0 left-0 right-0 bg-[#020408]/95 backdrop-blur-md border-t border-brand-border p-3 xl:hidden z-50 flex gap-3">
     <a href="tel:05325097158" class="flex-1 bg-gradient-to-r from-amber-400 to-amber-500 text-slate-950 font-black py-3.5 rounded-xl text-center flex items-center justify-center gap-2 text-sm shadow-md">
       <i class="fa-solid fa-phone"></i> ARA (7/24)
     </a>
@@ -806,10 +797,10 @@
     </a>
   </div>
 
-  <!-- TOAST NOTIFICATION CONTAINER -->
+  <!-- TOAST BİLDİRİM KAPSAYICISI -->
   <div id="toastContainer" class="fixed bottom-20 left-6 z-50 hidden md:block max-w-sm"></div>
 
-  <!-- ADMIN GİRİŞ & YÖNETİM MODALI -->
+  <!-- ADMIN GİRİŞ & YÖNETİM MODALI (ŞİFRE: selman123) -->
   <div id="adminModal" class="fixed inset-0 bg-slate-950/85 backdrop-blur-xl z-50 hidden flex items-center justify-center p-4">
     <div class="bg-brand-card border border-brand-border w-full max-w-xl rounded-3xl p-8 relative shadow-2xl">
       <button onclick="closeAdminModal()" class="absolute top-6 right-6 text-slate-400 hover:text-white text-2xl">
@@ -863,9 +854,7 @@
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 
   <script>
-    // ----------------------------------------------------
-    // YORUM VERİ DEPOSU (LOCALSTORAGE)
-    // ----------------------------------------------------
+    // LOCALSTORAGE DESTEKLİ YORUM VERİLERİ
     const initialComments = [
       { id: 'comment-1', name: 'Murat K.', service: 'Yerinde Lastik Tamiri', rating: 5, date: '2 gün önce', text: 'Gece 03:00\'te Ümraniye tarafında lastiğim patladı. WhatsApp\'tan konum attım, usta 20 dakikada geldi.', approved: true },
       { id: 'comment-2', name: 'Selin Y.', service: 'Akü Takviyesi & Değişimi', rating: 5, date: '1 hafta önce', text: 'Otoyolda aküm bitti. Mobil araçlarında seyyar POS cihazı olması harika bir olay, hemen hallettik.', approved: true },
@@ -881,9 +870,7 @@
       updateAverageRating();
     }
 
-    // ----------------------------------------------------
-    // 1. MOBİL MENÜ VE DİNAMİK YÖNLENDİRME
-    // ----------------------------------------------------
+    // 1. MOBİL MENÜ TOGGLE
     function toggleMobileMenu() {
       const menu = document.getElementById('mobileMenu');
       const icon = document.getElementById('menuIcon');
@@ -891,9 +878,7 @@
       icon.className = menu.classList.contains('hidden') ? 'fa-solid fa-bars' : 'fa-solid fa-xmark';
     }
 
-    // ----------------------------------------------------
     // 2. İSTANBUL ACİL YOL DURUMU DİNAMİK RENDER
-    // ----------------------------------------------------
     const trafficData = [
       { name: "15 Temmuz Şehitler K.", status: "Akıcı", speed: "65 km/s", delay: "Gecikme Yok", color: "emerald" },
       { name: "FSM Köprüsü", status: "Yoğun", speed: "25 km/s", delay: "+10 Dk Varış", color: "amber" },
@@ -929,9 +914,7 @@
       });
     }
 
-    // ----------------------------------------------------
     // 3. ARIZA TEŞHİS ASİSTANI
-    // ----------------------------------------------------
     const diagData = {
       battery: {
         title: "Akü veya Şarj Sistemi Arızası",
@@ -969,9 +952,7 @@
       resPanel.classList.remove('hidden');
     }
 
-    // ----------------------------------------------------
-    // 4. FİYAT HESAPLAMA SİMÜLATÖRÜ 4.0
-    // ----------------------------------------------------
+    // 4. FİYAT HESAPLAMA SİMÜLATÖRÜ
     function calculateEstimate() {
       const region = document.getElementById('calcRegion').value;
       const vType = document.getElementById('calcVehicleType').value;
@@ -1004,9 +985,7 @@
       document.getElementById('calcWhatsappBtn').href = `https://wa.me/905325097158?text=${waMsg}`;
     }
 
-    // ----------------------------------------------------
     // 5. GARANTİ SORGULAMA SİSTEMİ
-    // ----------------------------------------------------
     function handleWarrantySearch(e) {
       e.preventDefault();
       const plate = document.getElementById('warrantyPlate').value.toUpperCase();
@@ -1017,9 +996,7 @@
       res.classList.remove('hidden');
     }
 
-    // ----------------------------------------------------
     // 6. S.S.S. ACCORDION
-    // ----------------------------------------------------
     function toggleFaq(btn) {
       const item = btn.parentElement;
       const isOpen = item.classList.contains('open');
@@ -1029,9 +1006,7 @@
       }
     }
 
-    // ----------------------------------------------------
-    // 7. GERÇEKÇİ 60 FPS CANLI HARİTA & FLYTO FİX
-    // ----------------------------------------------------
+    // 7. GERÇEKÇİ 60 FPS CANLI HARİTA & FLYTO SIFIR HATA FİX
     const map = L.map('fleetMap', { center: [41.015137, 28.979530], zoom: 10 });
 
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -1065,7 +1040,6 @@
     const markers = [];
 
     vehicles.forEach(v => {
-      // Araç Kartı Render Etme
       const card = document.createElement('div');
       card.id = `fleet-card-${v.id}`;
       card.className = `bg-brand-card border border-brand-border p-5 rounded-2xl flex items-center justify-between hover:border-amber-500/50 transition duration-300 shadow-lg cursor-pointer`;
@@ -1088,7 +1062,6 @@
       `;
       fleetContainer.appendChild(card);
 
-      // Harita İkonu
       const startPos = v.route[0];
       const customIcon = L.divIcon({
         className: 'vehicle-marker-badge',
@@ -1118,18 +1091,16 @@
     function focusVehicle(id) {
       const targetItem = markers.find(m => m.id === id);
       if (targetItem) {
-        // Harita yumuşak odaklanma
         map.flyTo([targetItem.lat, targetItem.lng], 13, { duration: 1.2 });
         targetItem.marker.openPopup();
 
-        // Kart ve İkon Efekt Parlatması
         document.querySelectorAll('.car-icon-box').forEach(el => el.classList.remove('active-focused'));
         const iconBox = document.getElementById(`car-box-${id}`);
         if (iconBox) iconBox.classList.add('active-focused');
       }
     }
 
-    // 60 FPS Yumuşak Hareket Algoritması (Lerp Interpolation)
+    // 60 FPS Smooth Movement Algorithm (LERP)
     function animateVehicles() {
       markers.forEach(item => {
         const v = item.data;
@@ -1137,13 +1108,12 @@
         const nextWpIndex = (v.currentWaypoint + 1) % v.route.length;
         const nextWp = v.route[nextWpIndex];
 
-        v.progress += 0.0025; // Hız faktörü (Gerçekçi yumuşak kayma)
+        v.progress += 0.0025; // Hız Faktörü
         if (v.progress >= 1) {
           v.progress = 0;
           v.currentWaypoint = nextWpIndex;
         }
 
-        // Lineer İnterpolasyon (LERP)
         item.lat = currentWp[0] + (nextWp[0] - currentWp[0]) * v.progress;
         item.lng = currentWp[1] + (nextWp[1] - currentWp[1]) * v.progress;
 
@@ -1155,9 +1125,7 @@
 
     requestAnimationFrame(animateVehicles);
 
-    // ----------------------------------------------------
-    // 8. YORUM YÖNETİMİ & ADMIN PANELS
-    // ----------------------------------------------------
+    // 8. YORUM VE YÖNETİM PANELİ
     let selectedRating = 5;
 
     function highlightStars(count) {
@@ -1252,7 +1220,6 @@
       setTimeout(() => document.getElementById('successMsg').classList.add('hidden'), 5000);
     }
 
-    // Admin Paneli İşlemleri
     function openAdminModal() { document.getElementById('adminModal').classList.remove('hidden'); }
     function closeAdminModal() { document.getElementById('adminModal').classList.add('hidden'); }
 
@@ -1322,9 +1289,7 @@
       saveComments();
     }
 
-    // ----------------------------------------------------
-    // 9. GERÇEK ZAMANLI TOAST BİLDİRİMLERİ
-    // ----------------------------------------------------
+    // 9. REALTIME TOASTS
     const fakeActivities = [
       { name: "Mehmet K.", location: "Kadıköy", service: "Lastik Tamiri" },
       { name: "Canan T.", location: "Ümraniye", service: "Akü Takviye" },
@@ -1358,7 +1323,7 @@
 
     setInterval(showRandomToast, 14000);
 
-    // Başlangıç Çağrıları
+    // BAŞLANGIÇ ÇAĞRILARI
     renderTrafficStatus();
     renderComments();
     updateAverageRating();
